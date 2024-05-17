@@ -1,0 +1,26 @@
+{
+    "name": "paulovitor/miniframework",
+    "version": "2.7.6",
+    "archive": {
+        "name": "miniframework"
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-mbstring": "*"
+    },
+    "authors": [
+        {
+            "name": "Paulo Vitor Guedes",
+            "email": "vitorinfo@gmail.com",
+            "homepage": "https://www.vitorinfo.com",
+            "role": "Developer"
+        }
+
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "MF\\": "vendor/MF/"
+        }
+    }
+}
