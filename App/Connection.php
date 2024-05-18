@@ -1,15 +1,13 @@
 <?php
 
 namespace App;
-use PDO;
-use PDOException;
 
 class Connection
 {
-    public function getDb()
+    public static function getDb()
     {
         try {
-            $conn = new PDO(
+            $conn = new \PDO(
                 "mysql:host=localhost;
                 dbname=mvc;
                 charset=utf8",
@@ -17,7 +15,7 @@ class Connection
             );
             return $conn;
 
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             //Implementar tratativas
         }
     }
