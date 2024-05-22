@@ -2,16 +2,10 @@
 
 namespace App\Models;
 
-class Produto
+use MF\Model\Model;
+
+class Produto extends Model
 {
-
-    protected $db;
-
-    public function __construct(\PDO $db)
-    {
-        $this->db = $db;
-    }
-
     public function getProdutos() :array
     {
         $query = "select id, descricao, preco from tb_produtos";
