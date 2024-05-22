@@ -12,7 +12,9 @@ class Produto
         $this->db = $db;
     }
 
-    public function getProdutos() {
-        return array('Mesa', 'cadeira');
+    public function getProdutos() :array
+    {
+        $query = "select id, descricao, preco from tb_produtos";
+        return $this->db->query($query)->fetchAll();
     }
 }

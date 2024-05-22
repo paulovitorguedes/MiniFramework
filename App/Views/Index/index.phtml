@@ -1,9 +1,7 @@
 <h1>Index</h1>
-<hr/>
+<hr />
 
 <?php
-    echo "Chegamos ao indexController e disparamento a action index <br />";
-    foreach($this->view->dados as $key => $value) {
-        echo $value."<br />";
-    }
-?>
+foreach ($this->view->dados as $key => $produto) {
+    echo "{$produto['id']} - {$produto['descricao']} - {$produto['preco']} <br />";
+}
