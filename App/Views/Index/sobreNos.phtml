@@ -1,9 +1,10 @@
 <h1>Sobre Nos</h1>
-<hr/>
+<hr />
 
-<?php
-    echo "Chegamos ao indexController e disparamento a action Sobre Nos <br />";
-    foreach($this->view->dados as $key => $value) {
-        echo $value."<br />";
-    }
-?>
+
+<?php foreach ($this->view->dados as $key => $info) { ?>
+    <h1> <?php echo $info['titulo']; ?> </h1>
+    <br />
+    <?php echo $info['descricao']; ?>
+    <hr />
+<?php } ?>

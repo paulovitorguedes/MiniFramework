@@ -8,6 +8,7 @@ use MF\Controller\Action;
 
 use App\Connection;
 use App\Models\Produto;
+use App\Models\Info;
 
 class IndexController extends Action
 {
@@ -26,9 +27,20 @@ class IndexController extends Action
 
         $this->render('index', 'layout1');
     }
+
+
     public function sobreNos()
     {
-        $this->view->dados = array('Notebook', 'Smartphone');
+        //instância de Conexão
+        $conn = Connection::getDb();
+
+        //instânciar Modelo
+        $info = new Info($conn);
+
+        //$produtos = array de produtos
+        $informacoes = $info->getInfo();
+        $this->view->dados = $informacoes;
+
         $this->render('sobreNos', 'layout1');
     }
 
